@@ -1,0 +1,1 @@
+<view class="box-container"><view class="box-pic"><image src="{{item.cover}}"></image></view><view class="box-name txt-hidden">{{''+item.name+''}}</view><view class="box-rate flex a-center"><uni-rate vue-id="0ea7de82-1" size="10" disabled value="{{$root.m0}}" bind:__l="__l"></uni-rate><view class="score">{{''+item.score+''}}</view></view></view>

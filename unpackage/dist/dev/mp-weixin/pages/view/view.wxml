@@ -1,0 +1,1 @@
+<view class="view-container flex a-center"><image class="view-pic" src="{{url}}" mode="widthFix" data-event-opts="{{[['longtap',[['save',['$0'],['url']]]]]}}" bindlongtap="__e"></image></view>

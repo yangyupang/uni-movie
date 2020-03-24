@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "洋芋影院",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "movie-box": "/components/index/movieBox/movieBox",
+    "trailer-box": "/components/index/trailerBox/trailerBox",
+    "u-like-box": "/components/index/uLikeBox/uLikeBox"
+  }
+}

@@ -2,7 +2,7 @@
 	<view class="container-box">
 		<view class="carousel-box">
 			<swiper indicator-dots="true" indicator-color="black" indicator-active-color="white" autoplay="true" class="carousel-swiper">
-				<swiper-item v-for="(item,index) in carouselList" :key="index" @click="chooseItem(item)">
+				<swiper-item v-for="(item,index) in carouselList" :key="index" @click="gotoDetail(item.movieId)">
 					<image :src="item.image" class="carousel-img" will-change:transform></image>
 				</swiper-item>
 			</swiper>
@@ -14,7 +14,9 @@
 			</view>
 			<scroll-view scroll-x v-if="hotList" class="">
 				<view class="flex flex-nowrap">
-					<movieBox v-for="item in hotList" :key="item.id" :item="item"></movieBox>
+					<view v-for="item in hotList" :key="item.id" @click="gotoDetail(item.id)">
+						<movieBox :item="item" />
+					</view>
 				</view>
 			</scroll-view>
 		</view>
@@ -23,8 +25,8 @@
 				<image class="trailer-img" src="../../static/images/trailer.png"></image>
 				<view>热门预告</view>
 			</view>
-			<view class="flex flex-wrap jc-around">
-				<trailerBox v-for="item in trailerList" :key="item.id" :item="item"></trailerBox>
+			<view>
+				<trailerBox :trailerList="trailerList"></trailerBox>
 			</view>
 		</view>
 		<view class="ulike-box">
@@ -33,7 +35,9 @@
 				<view>猜你喜欢</view>
 			</view>
 			<view class="">
-				<uLikeBox v-for="item in uLikeList" :key="item.id" :item="item"></uLikeBox>
+				<view v-for="item in uLikeList" :key="item.id" @click="gotoDetail(item.id)">
+					<uLikeBox :item="item"></uLikeBox>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -48,7 +52,7 @@
 			return {
 				carouselList: {},
 				hotList: {},
-				trailerList: {},
+				trailerList: null,
 				uLikeList: {},
 			}
 		},
@@ -118,8 +122,10 @@
 					}
 				})
 			},
-			chooseItem(item) {
-				console.log(item);
+			gotoDetail(id) {
+				uni.navigateTo({
+					url: `/pages/detail/detail?id=${id}`
+				})
 			}
 		},
 		onLoad() {
@@ -128,6 +134,13 @@
 			this.getHotList('superhero');
 			this.getULike();
 		},
+		onPullDownRefresh() {
+			this.getULike();
+			setTimeout(() => {
+				uni.stopPullDownRefresh()
+			}, 200)
+
+		}
 	}
 </script>
 
@@ -163,7 +176,7 @@
 
 	.superhero,
 	.trailer,
-	.ulike{
+	.ulike {
 		font-size: 24upx;
 		font-weight: 600;
 		padding: 30upx 20upx 10upx;
@@ -171,7 +184,7 @@
 
 	.hot-img,
 	.trailer-img,
-	.ulike-img{
+	.ulike-img {
 		width: 40upx;
 		height: 40upx;
 		margin-right: 10upx;

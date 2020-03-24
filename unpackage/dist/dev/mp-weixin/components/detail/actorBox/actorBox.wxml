@@ -1,0 +1,1 @@
+<view class="actor-container"><image class="actor-pic" src="{{item.photo}}" mode data-event-opts="{{[['tap',[['$gotoView',['$0'],['item.photo']]]]]}}" bindtap="__e"></image><view class="actor-name txt-hidden">{{''+item.name+''}}</view><view class="actor-actname txt-hidden">{{''+(item.role===1?item.actName:'饰演:'+item.actName)+''}}</view></view>

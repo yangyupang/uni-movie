@@ -1,14 +1,14 @@
 {
-	"pages": [
-		{
+	"pages": [{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "洋芋影院",
-				"h5":{
-					"titleNView":{
-						"type":"transparent"
+				"h5": {
+					"titleNView": {
+						"type": "transparent"
 					}
-				}
+				},
+				"enablePullDownRefresh": true
 			}
 		}, {
 			"path": "pages/search/search",
@@ -27,6 +27,47 @@
 					"titleNView": false
 				}
 			}
+		},
+		{
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "电影详情",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "share",
+							"float":"right"
+						}]
+					}
+				},
+				"h5": {
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+							"type": "share",
+							"float":"right"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/view/view",
+			"style": {
+				"navigationBarTitleText": "图片预览"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "用户信息"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录/注册"
+			}
 		}
 	],
 	"globalStyle": {
@@ -35,26 +76,27 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
-	"tabBar":{
-		"color":"#515151",
-		"selectedColor":"#f46f46",
-		"list":[{
-			"pagePath":"pages/index/index",
-			"text":"首页",
-			"iconPath":"static/images/movie.png",
-			"selectedIconPath":"static/images/movie-select.png"
-		},
-		{
-			"pagePath":"pages/search/search",
-			"text":"搜索",
-			"iconPath":"static/images/search.png",
-			"selectedIconPath":"static/images/search-select.png"
-		},
-		{
-			"pagePath":"pages/my/my",
-			"text":"我的",
-			"iconPath":"static/images/my.png",
-			"selectedIconPath":"static/images/my-select.png"
-		}]
+	"tabBar": {
+		"color": "#515151",
+		"selectedColor": "#f46f46",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/images/movie.png",
+				"selectedIconPath": "static/images/movie-select.png"
+			},
+			{
+				"pagePath": "pages/search/search",
+				"text": "搜索",
+				"iconPath": "static/images/search.png",
+				"selectedIconPath": "static/images/search-select.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "static/images/my.png",
+				"selectedIconPath": "static/images/my-select.png"
+			}
+		]
 	}
 }

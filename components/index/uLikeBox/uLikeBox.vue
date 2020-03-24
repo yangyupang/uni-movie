@@ -9,12 +9,13 @@
 			<view class="ulike-des">{{item.basicInfo}}</view>
 			<view class="ulike-des">{{item.releaseDate}}</view>
 		</view>
+		<view class="vertical-bar"></view>
 		<view class="ulike-control a-center flex">
-			<view class="">
+			<view class="" @click="giveALike">
 				<view class="">
 					<uni-icons color="#f6ac2d" type="hand-thumbsup" size="20"></uni-icons>
 				</view>
-				<view class="">
+				<view class="ulike-praise">
 					赞一下
 				</view>
 			</view>
@@ -40,7 +41,17 @@
 		components: {
 			uniRate,
 			uniIcons
+		},
+		methods: {
+		giveALike(){
+			// console.log("点赞");
+			uni.showToast({
+			    title: '赞',
+			    duration: 2000,
+				image:'/static/images/giveALike.png'
+			});
 		}
+		},
 	}
 </script>
 
@@ -72,9 +83,15 @@
 		color: gray;
 		font-size: 24upx;
 	}
-
+.vertical-bar{
+	height: 240upx;
+	border-left: 6upx dashed #DBDBDA;
+}
 	.ulike-control {
 		text-align: center;
 		color: #f6ac2d;
+	}
+	.ulike-praise{
+		font-size: 30upx;
 	}
 </style>
