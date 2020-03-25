@@ -11,16 +11,15 @@
 					<view>{{details.basicInfo}}</view>
 					<view>{{details.originalName}}</view>
 					<view>{{details.releaseDate}}</view>
-					<view class="flex jc-around a-center">
+					<view class="flex jc-between a-center" style="margin-top: 20upx;">
 						<view class="">
 							<view class="detail-scoretitle">综合评分</view>
 							<view class="detail-score">{{score}}</view>
 						</view>
-						<view class="">
+						<view class="" >
 							<uni-rate class="detail-rate" size='10' disabled :value="parseInt(score/2)" />
 							<view class="">{{details.prisedCounts}}人点赞</view>
 						</view>
-
 					</view>
 				</view>
 			</view>
@@ -185,7 +184,8 @@
 	}
 
 	.detail-rate {
-		margin-top: 60upx;
+		// margin-top: 60upx;
+		// text-align: center;
 	}
 
 	.detail-info {

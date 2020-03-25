@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-
+import dayjs from 'dayjs'
 Vue.config.productionTip = false
 
 Vue.prototype.$api =(url)=>{
@@ -11,6 +11,7 @@ Vue.prototype.$gotoView = (url) => {
 		url: `/pages/view/view?url=${url}`
 	})
 }
+Vue.prototype.$dayjs = dayjs
 App.mpType = 'app'
 
 const app = new Vue({

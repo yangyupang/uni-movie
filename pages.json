@@ -36,7 +36,7 @@
 					"titleNView": {
 						"buttons": [{
 							"type": "share",
-							"float":"right"
+							"float": "right"
 						}]
 					}
 				},
@@ -45,7 +45,7 @@
 						"type": "transparent",
 						"buttons": [{
 							"type": "share",
-							"float":"right"
+							"float": "right"
 						}]
 					}
 				}
@@ -66,9 +66,39 @@
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "登录/注册"
+				"navigationBarTitleText": "登录/注册",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/changePic/changePic",
+			"style": {
+				"navigationBarTextStyle": "white",
+				"navigationBarTitleText": "头像上传",
+				"navigationBarBackgroundColor": "#000000",
+				"backgroundColor": "#000000"
+			}
+		}, {
+			"path": "pages/changeNickname/changeNickname",
+			"style": {
+				"navigationBarTitleText": "修改昵称"
+			}
+		}, {
+			"path": "pages/changeBirthday/changeBirthday",
+			"style": {
+				"navigationBarTitleText": "修改生日"
+			}
+		}, {
+			"path": "pages/changeSex/changeSex",
+			"style": {
+				"navigationBarTitleText": "修改性别"
 			}
 		}
+
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
